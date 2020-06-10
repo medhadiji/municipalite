@@ -1,0 +1,21 @@
+
+
+<mat-sidenav-container dir="{{direction}}" fullscreen>
+
+  <mat-sidenav-content fxLayout="column">
+
+    <app-navbar (switchDir)="switchDirection()"></app-navbar>
+
+    <router-outlet>
+
+    </router-outlet>
+
+
+
+    <app-footer fxFlexOffset="auto"></app-footer>
+
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
