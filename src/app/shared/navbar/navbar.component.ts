@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   isAuth = false;
   authSubscription: Subscription;
   @Output() switchDir = new EventEmitter<void>();
+  @Input() color:string;
   constructor(/*  private authService: AuthService */    private translate: TranslateService, ) {
 
     const lng = localStorage.getItem('language');

@@ -4,7 +4,7 @@
 
   <mat-sidenav-content fxLayout="column">
 
-    <app-navbar (switchDir)="switchDirection()"></app-navbar>
+    <app-navbar [color]="'red'"  (switchDir)="switchDirection()"></app-navbar>
 
     <router-outlet>
 
@@ -17,5 +17,5 @@
 
 
   </mat-sidenav-content>
-
 </mat-sidenav-container>
+

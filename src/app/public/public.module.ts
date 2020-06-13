@@ -8,6 +8,7 @@ import { LoginComponent } from '../shared/login/login.component';
 import { AuthGuard } from '../shared/services/auth.guard';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
+import { EmployeLayoutComponent } from '../employe/employe-layout/employe-layout.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-  { path: 'dashboard', component: LoginComponent, canActivate: [AuthGuard] }
+  { path: 'dashboard', component: LoginComponent, canActivate: [AuthGuard] },
+ 
 
 ]}
 ]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
+// import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public authService: AuthService,
+  /*   public authService: AuthService, */
     public router: Router,
 
   ) {
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.isLoading=true;
-    this.authService.signIn(this.form.value)
+   // this.authService.signIn(this.form.value)
   }
   ngOnDestroy() {
     if (this.loadingSubs) {

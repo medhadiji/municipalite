@@ -1,0 +1,108 @@
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Bureau d'ordre </ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Num Bureau d'ordre" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Date de depot">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Dossier</ng-template>
+       <mat-form-field>
+    <mat-label>Nature du dossier</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let natureDossier of nature" [value]="natureDossier.value">
+        {{natureDossier.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+   <mat-form-field>
+    <mat-label>Type de construction</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let typeConstruction of type" [value]="typeConstruction.value">
+        {{typeConstruction.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+        <div>
+           <button mat-raised-button color="primary" matStepperNext>Retour</button>
+           &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
+        </div>
+      </form>
+    </mat-step>
+    
+  
+  
+   <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Terrain</ng-template>
+  
+       <mat-form-field class="example-full-width">
+      <input matInput placeholder="Surface" formControlName="thirdCtrl" required>
+    </mat-form-field>
+     <mat-form-field class="example-full-width">
+      <input matInput placeholder="Lieux" formControlName="thirdCtrl" required>
+    </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Retour</button>
+           &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
+        
+      </div>
+      </form>
+    </mat-step>
+     <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Propriétaire</ng-template>
+        <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nom du propriétaire" formControlName="fourthCtrl" required>
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>Choisir un propriétaire existant</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let prop of proprietaire" [value]=" prop.value">
+        {{prop.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+   <div>
+        <button mat-raised-button color="primary" matStepperNext>Retour</button>
+           &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
+        
+      </div>
+       </form>
+    </mat-step>
+    
+  <mat-step [stepControl]="fFormGroup">
+      <form [formGroup]="fFormGroup">
+        <ng-template matStepLabel>Piéces du dossier</ng-template>
+       
+         <mat-checkbox formControlName="fourthCtrl" required>Plan</mat-checkbox><br>
+         <mat-checkbox>Une demande sur papier libre</mat-checkbox>
+         <br>
+         <mat-checkbox>Une fiche de renseignements techniques</mat-checkbox><br>
+         <mat-checkbox> Un projet de construction établi en six (6) exemplaires ou plus </mat-checkbox>
+  
+         
+         <div>
+    
+         <button mat-raised-button color="primary" matStepperNext>Retour</button>&nbsp;  <button mat-raised-button color ="primary" (click)="stepper.reset()">Reset</button>
+      </div>
+      </form>
+  </mat-step>
+   
+  </mat-horizontal-stepper>
+  
+  
+  
+ 

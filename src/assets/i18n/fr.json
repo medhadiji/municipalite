@@ -1,5 +1,25 @@
 {
-"login":"login",
+"Connexion":"Connexion",
 "about":"about",
-"municipalite ariana":"municipalite ariana"
+"municipalite ariana":"municipalite ",
+"Inscription" : "Inscription",
+"Accueil":"Accueil",
+"Email est obligatoire":"Email est obligatoire",
+"Mot de passe est obligatoire " : "Mot de passe est obligatoire ",
+"Addresse mail invalide":"Adresse mail invalide",
+"Mot de passe court, minimum 5 lettres":"Mot de passe court, minimum 5 lettres",
+"Email":"Email",
+"Mot de passe":"Mot de passe",
+"Menu":"Menu",
+"Pieces du dossier":"Pieces du dossier",
+"Contact":"Contact",
+"Adresse":"Adresse",
+"Téléphone":"Téléphone",
+"Fax":"FAX",
+"© Copyright 2020.All Rights Reserved.":"© Copyright 2020.All Rights Reserved.",
+"Nom":"Nom",
+"Prenom":"Prenom",
+"CIN":"CIN",
+"Num Dossier":"Num Dossier",
+"Num de bureau ordre": "Num de bureau d'ordre"
 }
