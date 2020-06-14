@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
@@ -34,8 +34,8 @@
         {{typeConstruction.viewValue}}
       </mat-option>
     </mat-select>
-  </mat-form-field><br>
-        <div>
+  </mat-form-field>
+      <br>  <div>
            <button mat-raised-button color="primary" matStepperNext>Retour</button>
            &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
         </div>
@@ -53,7 +53,7 @@
     </mat-form-field>
      <mat-form-field class="example-full-width">
       <input matInput placeholder="Lieux" formControlName="thirdCtrl" required>
-    </mat-form-field>
+    </mat-form-field><br><br>
       <div>
         <button mat-raised-button color="primary" matStepperNext>Retour</button>
            &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
@@ -74,7 +74,7 @@
         {{prop.viewValue}}
       </mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field><br><br>
    <div>
         <button mat-raised-button color="primary" matStepperNext>Retour</button>
            &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
@@ -94,15 +94,16 @@
          <mat-checkbox> Un projet de construction établi en six (6) exemplaires ou plus </mat-checkbox>
 
 
-         <div>
+         <div><br><br>
 
          <button mat-raised-button color="primary" matStepperNext>Retour</button>&nbsp;  <button mat-raised-button color ="primary" (click)="stepper.reset()">Reset</button>
-      </div>
+         &nbsp;  <button mat-raised-button color ="primary" (click)="stepper.reset()">Enregistrer</button>
+        </div>
       </form>
   </mat-step>
 
   </mat-horizontal-stepper>
-
+<app-footer></app-footer>
 
 
 
