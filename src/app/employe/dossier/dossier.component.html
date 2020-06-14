@@ -41,13 +41,13 @@
         </div>
       </form>
     </mat-step>
-    
-  
-  
+
+
+
    <mat-step [stepControl]="thirdFormGroup">
       <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>Terrain</ng-template>
-  
+
        <mat-form-field class="example-full-width">
       <input matInput placeholder="Surface" formControlName="thirdCtrl" required>
     </mat-form-field>
@@ -57,11 +57,11 @@
       <div>
         <button mat-raised-button color="primary" matStepperNext>Retour</button>
            &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
-        
+
       </div>
       </form>
     </mat-step>
-     <mat-step [stepControl]="thirdFormGroup">
+     <mat-step [stepControl]="fourthFormGroup">
       <form [formGroup]="fourthFormGroup">
       <ng-template matStepLabel>Propriétaire</ng-template>
         <mat-form-field class="example-full-width">
@@ -78,31 +78,31 @@
    <div>
         <button mat-raised-button color="primary" matStepperNext>Retour</button>
            &nbsp;  <button mat-raised-button color="primary" matStepperNext>Suivant</button>
-        
+
       </div>
        </form>
     </mat-step>
-    
+
   <mat-step [stepControl]="fFormGroup">
       <form [formGroup]="fFormGroup">
         <ng-template matStepLabel>Piéces du dossier</ng-template>
-       
-         <mat-checkbox formControlName="fourthCtrl" required>Plan</mat-checkbox><br>
+
+         <mat-checkbox formControlName="fFormGroup" required>Plan</mat-checkbox><br>
          <mat-checkbox>Une demande sur papier libre</mat-checkbox>
          <br>
          <mat-checkbox>Une fiche de renseignements techniques</mat-checkbox><br>
          <mat-checkbox> Un projet de construction établi en six (6) exemplaires ou plus </mat-checkbox>
-  
-         
+
+
          <div>
-    
+
          <button mat-raised-button color="primary" matStepperNext>Retour</button>&nbsp;  <button mat-raised-button color ="primary" (click)="stepper.reset()">Reset</button>
       </div>
       </form>
   </mat-step>
-   
+
   </mat-horizontal-stepper>
-  
-  
-  
- 
+
+
+
+
