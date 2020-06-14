@@ -1,0 +1,19 @@
+mat-horizontal-stepper{
+   /* margin-bottom: 20%;*/
+    position: absolute;
+   top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+app-footer{
+    
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+/*padding-top:50px;*/
+
+height:50px;
+}
