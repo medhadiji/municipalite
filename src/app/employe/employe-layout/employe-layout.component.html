@@ -1,1 +1,89 @@
-<p>employe-layout works!</p>
+<ng-container *ngIf="showSideNav">
+  <mat-toolbar  class="example-header mat-elevation-z1">
+
+      <button class="navbar-toggle-button" mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
+      <div class="toolbar-separator"></div>
+      <div class="ml-1">Municipalite</div>
+
+
+  <div fxFlex fxLayoutAlign="end center" > </div>
+  <div style="float: right;">
+
+        <button mat-button (click)="logout()"  class="">
+          <mat-icon>exit_to_app</mat-icon>
+          <span fxHide.xs style="margin-left: 10px;">Logout</span>
+      </button>
+
+      </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav mat-elevation-z6">
+          <mat-nav-list>
+
+                <a  >
+                  <mat-list-item style="  color: white!important;" >
+                  <mat-icon class="admin-icon">home</mat-icon>
+                  <span>Dashboard</span>
+                </mat-list-item>
+                </a>
+
+              <mat-divider></mat-divider>
+              <a  >
+              <mat-list-item style="  color: white!important;" >
+
+                  <mat-icon class="admin-icon">face</mat-icon>
+                  <span>Users</span>
+
+              </mat-list-item>
+            </a>
+
+                  <mat-divider></mat-divider>
+                  <a  >
+                    <mat-list-item style="  color: white!important;" >
+
+                        <mat-icon class="admin-icon">import_contacts</mat-icon>
+                        <span>Careers</span>
+
+                    </mat-list-item>
+                  </a>
+                    <mat-divider></mat-divider>
+                    <a  >
+                      <mat-list-item style="  color: white!important;" >
+
+                          <mat-icon class="admin-icon">date_range</mat-icon>
+                          <span>Events</span>
+
+                      </mat-list-item>
+                    </a>
+                        <mat-divider></mat-divider>
+                <a  >
+                  <mat-list-item style="  color: white!important;" >
+                  <mat-icon class="admin-icon">pages</mat-icon>
+                  <span>News</span>
+
+              </mat-list-item>
+            </a>
+            <mat-divider></mat-divider>
+            <a   >
+              <mat-list-item style="  color: white!important;" >
+              <mat-icon class="admin-icon">email</mat-icon>
+              <span>Emails</span>
+
+          </mat-list-item>
+        </a>
+          </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+          <main  id="admin">
+              <router-outlet></router-outlet>
+          </main>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+  </ng-container>
+  <ng-container *ngIf="!showSideNav">
+    <main  id="admin">
+      <router-outlet></router-outlet>
+  </main>
+  </ng-container>

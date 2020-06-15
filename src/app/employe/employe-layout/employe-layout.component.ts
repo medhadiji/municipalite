@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employe-layout.component.css']
 })
 export class EmployeLayoutComponent implements OnInit {
+  showSideNav=true;
+  logout() {
 
-  constructor() { }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.showSideNav=true;
+
+  }
 }
