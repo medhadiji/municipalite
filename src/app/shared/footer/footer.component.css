@@ -9,9 +9,11 @@ ul {
   padding-left: 0;
 }
 footer {
-  background-color: #3F51B5;
+  background-color: mat-;
   color: #bbb;
   line-height: 1.5;
+  background-color: #283593;
+
 }
 a {
   text-decoration: none;

@@ -5,15 +5,23 @@
           <mat-icon>menu</mat-icon>
       </button>
       <div class="toolbar-separator"></div>
-      <div class="ml-1">Municipalite</div>
+      <div class="ml-1">{{'Municipalite ' |translate}}</div>
 
 
   <div fxFlex fxLayoutAlign="end center" > </div>
+  <ul fxLayout fxLayoutGap="10px" class="navigation-items"style=" list-style: none;"  >
+    <li >
+      <a style="cursor: pointer" (click)="switchLang('fr')" >FR</a>
+    </li>
+    <li >
+      <a style="cursor: pointer" (click)="switchLang('ar')">AR</a>
+    </li>
+  </ul>
   <div style="float: right;">
 
         <button mat-button (click)="logout()"  class="">
           <mat-icon>exit_to_app</mat-icon>
-          <span fxHide.xs style="margin-left: 10px;">Logout</span>
+          <span fxHide.xs style="margin-left: 10px;">{{'Deconnexion'| translate}}</span>
       </button>
 
       </div>
@@ -22,57 +30,40 @@
       <mat-sidenav #sidenav mode="side" opened class="example-sidenav mat-elevation-z6">
           <mat-nav-list>
 
-                <a  >
+
+            <a  routerLink="/home">
+              <mat-list-item style="  color: white!important;" >
+              <mat-icon class="admin-icon">home</mat-icon>
+              <span>{{'Accueil'|translate}}</span>
+            </mat-list-item>
+            </a>
+
+                <a  routerLink="/employe">
                   <mat-list-item style="  color: white!important;" >
-                  <mat-icon class="admin-icon">home</mat-icon>
-                  <span>Dashboard</span>
+                  <mat-icon class="admin-icon">dashboard</mat-icon>
+                  <span>{{'Dashboard'|translate}}</span>
                 </mat-list-item>
                 </a>
 
               <mat-divider></mat-divider>
-              <a  >
+              <a routerLink="/employe/dossier" >
+              <mat-list-item style="  color: white!important;" >
+
+                  <mat-icon class="admin-icon">drafts</mat-icon>
+                  <span>{{'Dossier'|translate}}</span>
+
+              </mat-list-item>
+            </a>
+            <a routerLink="/employe/profile" >
               <mat-list-item style="  color: white!important;" >
 
                   <mat-icon class="admin-icon">face</mat-icon>
-                  <span>Users</span>
+                  <span>{{'Profile'|translate}}</span>
 
               </mat-list-item>
             </a>
 
-                  <mat-divider></mat-divider>
-                  <a  >
-                    <mat-list-item style="  color: white!important;" >
 
-                        <mat-icon class="admin-icon">import_contacts</mat-icon>
-                        <span>Careers</span>
-
-                    </mat-list-item>
-                  </a>
-                    <mat-divider></mat-divider>
-                    <a  >
-                      <mat-list-item style="  color: white!important;" >
-
-                          <mat-icon class="admin-icon">date_range</mat-icon>
-                          <span>Events</span>
-
-                      </mat-list-item>
-                    </a>
-                        <mat-divider></mat-divider>
-                <a  >
-                  <mat-list-item style="  color: white!important;" >
-                  <mat-icon class="admin-icon">pages</mat-icon>
-                  <span>News</span>
-
-              </mat-list-item>
-            </a>
-            <mat-divider></mat-divider>
-            <a   >
-              <mat-list-item style="  color: white!important;" >
-              <mat-icon class="admin-icon">email</mat-icon>
-              <span>Emails</span>
-
-          </mat-list-item>
-        </a>
           </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>

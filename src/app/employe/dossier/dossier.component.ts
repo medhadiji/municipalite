@@ -20,10 +20,8 @@ export interface prop{
 })
 export class DossierComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
-  thirdFormGroup : FormGroup;
-  fourthFormGroup : FormGroup;
+
+  today : number = Date.now();
   fFormGroup : FormGroup;
   proprietaire : prop []=[
 
@@ -31,13 +29,21 @@ export class DossierComponent implements OnInit {
    nature: natureDossier[] = [
     {value: 'n1', viewValue: 'permis de bâtir'},
     {value: 'n2', viewValue: 'autorisation des travaux dans la voix public'},
-   
+
   ];
   type : TypeConstruction[]=[
     {value : 't1',viewValue : 'Individuel'},
     {value : 't2',viewValue: 'Collectif'}
   ]
   constructor(private _formBuilder: FormBuilder) {}
+
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup : FormGroup;
+  fourthFormGroup : FormGroup;
+  isEditable = true;
+
+
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
@@ -47,14 +53,13 @@ export class DossierComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
-       thirdCtrl : ['',Validators.required]
+      thirdCtrl: ['', Validators.required]
     });
     this.fourthFormGroup = this._formBuilder.group({
-      fourthCtrl :['',Validators.required]
-    })
+      fourthCtrl : ['',Validators.required]
+    });
     this.fFormGroup = this._formBuilder.group({
       fFormGroup : ['',Validators.required]
     })
   }
-
 }

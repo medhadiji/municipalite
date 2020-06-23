@@ -1,11 +1,11 @@
 mat-horizontal-stepper{
    /* margin-bottom: 20%;*/
     position: absolute;
-   top: 50%; left: 50%; 
-    transform: translate(-50%, -50%); 
+   top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
 }
 app-footer{
-    
+
 
 position:absolute;
 
@@ -17,3 +17,10 @@ width:100%;
 
 height:50px;
 }
+
+button{
+  margin-top: 60px;
+  background-color: rgba(0, 0, 0, 0.87);;
+  color: white;
+}
+

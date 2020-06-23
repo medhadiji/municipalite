@@ -5,21 +5,37 @@ import { Routes, RouterModule } from '@angular/router';
 //import { DashboardComponent } from './dashboard/dashboard.component';
 import { DossierComponent } from './dossier/dossier.component';
 import { SharedModule } from '../shared/shared.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from '../shared/login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: '', component: EmployeLayoutComponent },
+  { path: '', component: EmployeLayoutComponent ,
 
+children: [
 
   {
     path: 'dossier',
     component: DossierComponent
+  },
+  {
+    path : '',component : DashboardComponent
+  },
+  {
+    path : '/login', component : LoginComponent
+  },
+  {
+    path : 'profile', component : ProfileComponent
   }
+]
+
+}
 
 ];
 
 
 @NgModule({
-  declarations: [EmployeLayoutComponent,  DossierComponent],
+  declarations: [EmployeLayoutComponent,  DossierComponent, DashboardComponent, ProfileComponent],
   imports: [
     CommonModule,
     SharedModule,

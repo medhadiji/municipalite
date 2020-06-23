@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="h-100" *ngIf="!authService?.isLoggedIn">
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100" >
   <form [formGroup]="form" (ngSubmit)="loginUser()"  fxFlex="90" fxFlex.gt-sm="30" fxFlex.sm="60" class="mat-elevation-z6">
      <div class="content-header " >
 
@@ -23,8 +23,8 @@
                <mat-error *ngIf="form.controls.password.hasError('minlength')">{{'Mot de passe court, minimum 5 lettres'| translate}}</mat-error>
            </mat-form-field>
 
-           <button *ngIf="!isLoading" mat-raised-button color="primary" [disabled]="form.invalid" class="mat-elevation-z6 w-100 mt-3" type="submit">{{'Connexion'| translate}}</button>
-
+           <button *ngIf="!isLoading" mat-raised-button color="primary" [disabled]="form.invalid" class="mat-elevation-z6 w-100 mt-3" type="submit">{{'Connexion'| translate}}</button><br>
+            <br><a href="" style="margin-left: 30%;">Mot de Passe oublié ?</a>
            <mat-spinner *ngIf="isLoading"></mat-spinner>
 
        </div>
