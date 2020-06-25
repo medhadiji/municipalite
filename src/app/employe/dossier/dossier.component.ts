@@ -58,8 +58,6 @@ export class DossierComponent implements OnInit {
     this.fourthFormGroup = this._formBuilder.group({
       fourthCtrl : ['',Validators.required]
     });
-    this.fFormGroup = this._formBuilder.group({
-      fFormGroup : ['',Validators.required]
-    })
+
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 //import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-  /*   public authService: AuthService, */
+    public authService: AuthService,
     public router: Router,
 
   ) {
@@ -23,18 +24,30 @@ export class RegisterComponent implements OnInit {
     this.form = this.fb.group({
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(5)])],
-      'nom' : [null,Validators.required],
-      'prenom' : [null,Validators.required],
-      'cin':[null,Validators.required],
-      'num':[null,Validators.required]
+      'name' : [null,Validators.required],
+      'username' : [null,Validators.required],
+      'idDossier' : [null,Validators.required]
+  /*     'cin':[null,Validators.required],
+      'num':[null,Validators.required] */
     });
 
   }
 
   ngOnInit() { }
 
-  loginUser() {
-   // this.authService.signIn(this.form.value)
+  register() {
+
+let user = this.form.value;
+user.validate=false;
+user.userRole="user";
+user.idDossier=2;
+console.log(user)
+  this.authService.signup(user).subscribe(val=>{
+    console.log(val);
+    this.router.navigateByUrl('/login');
+
+  })
+
   }
 
 }
