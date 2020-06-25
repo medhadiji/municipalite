@@ -34,6 +34,11 @@ export class AuthService {
 
   }
 
+  signin(user : any){
+    let api = `${this.endpoint}auth/signin`;
+    return this.http.post(api , user,this.httpOptions)
+  }
+
 
 
 }

@@ -12,9 +12,9 @@
 
            <mat-form-field class="w-100">
                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">mail</mat-icon>
-               <input matInput placeholder="{{'Email'|translate}}" formControlName="email">
-               <mat-error *ngIf="form.controls.email.errors?.required">{{'Email est obligatoire'| translate}}</mat-error>
-               <mat-error *ngIf="form.controls.email.hasError('invalidEmail')">{{'Addresse mail invalide'| translate}}</mat-error>
+               <input matInput placeholder="{{'Email'|translate}}" formControlName="username">
+               <mat-error *ngIf="form.controls.username.errors?.required">{{'Email est obligatoire'| translate}}</mat-error>
+               <mat-error *ngIf="form.controls.username.hasError('invalidEmail')">{{'Addresse mail invalide'| translate}}</mat-error>
            </mat-form-field>
            <mat-form-field class="w-100">
                <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color">lock</mat-icon>

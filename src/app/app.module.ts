@@ -10,10 +10,12 @@ import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import { CitoyenLayoutComponent } from './citoyen/citoyen-layout/citoyen-layout.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CitoyenLayoutComponent
   ],
   imports: [
     BrowserModule,

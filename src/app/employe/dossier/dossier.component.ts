@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { EmployeService } from '../service/employe.service';
 
-export interface natureDossier{
-  value: string;
-  viewValue: string;
-}
-export interface TypeConstruction{
-  value: string;
-  viewValue: string;
-}
+
+
 export interface prop{
   value: string;
   viewValue: string;
@@ -20,22 +15,17 @@ export interface prop{
 })
 export class DossierComponent implements OnInit {
   isLinear = false;
+  allNature:any = [] ;
+  allTerrain:any=[];
+  allConstruction :any =[];
 
   today : number = Date.now();
   fFormGroup : FormGroup;
   proprietaire : prop []=[
 
   ];
-   nature: natureDossier[] = [
-    {value: 'n1', viewValue: 'permis de bâtir'},
-    {value: 'n2', viewValue: 'autorisation des travaux dans la voix public'},
 
-  ];
-  type : TypeConstruction[]=[
-    {value : 't1',viewValue : 'Individuel'},
-    {value : 't2',viewValue: 'Collectif'}
-  ]
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private service :EmployeService) {}
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -46,6 +36,9 @@ export class DossierComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getAllNature();
+    this.getAllConstruction();
+
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
@@ -54,10 +47,32 @@ export class DossierComponent implements OnInit {
     });
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required]
-    });
+    });;
     this.fourthFormGroup = this._formBuilder.group({
       fourthCtrl : ['',Validators.required]
     });
 
   }
+getAllNature(){
+  this.service.getAllNature().subscribe((result)=>{
+    console.log(result)
+    this.allNature= result;
+  })
+}
+
+getAllTerrain(){
+  this.service.getAllTerrain().subscribe((result)=>{
+    console.log(result)
+    this.allTerrain=result
+
+  })
+}
+getAllConstruction(){
+  this.service.getAllConstruction().subscribe((result)=>{
+    console.log(result)
+    this.allConstruction=result
+
+  })
+}
+
 }

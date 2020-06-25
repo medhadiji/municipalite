@@ -38,6 +38,7 @@ export class RegisterComponent implements OnInit {
   register() {
 
 let user = this.form.value;
+user.username = this.form.value['email'];
 user.validate=false;
 user.userRole="user";
 user.idDossier=2;

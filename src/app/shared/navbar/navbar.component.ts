@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.authSubscription.unsubscribe();
+   // this.authSubscription.unsubscribe();
   }
  switchLang(lng){
   if (!lng || lng !== null) {

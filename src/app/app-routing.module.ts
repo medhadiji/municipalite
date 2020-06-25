@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     data: {
       roles: [
         'admin'
@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'employe',
     loadChildren: () => import('./employe/employe.module').then(m => m.EmployeModule),
-    //canActivate: [AuthGuard],
+   // canActivate: [AuthGuard],
     data: {
       roles: [
         'employe'
