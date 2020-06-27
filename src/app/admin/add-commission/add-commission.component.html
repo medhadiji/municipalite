@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="h-100">
+  <div
+    fxFlex="90"
+    fxFlex.gt-sm="100"
+    fxFlex.sm="100"
+    class="mat-elevation-z6"
+  >
+    <div class="content-header">
+      <div class="logo">
+        <img style="width: 50%;" src="" />
+      </div>
+      <h1>{{ "Commission" | translate }}</h1>
+    </div>
+    <div class="p-3">
+      <mat-form-field class="w-100">
+        <mat-label>Choose a date</mat-label>
+        <input matInput placeholder="{{ 'Date' | translate }}"  [matDatepicker]="picker" [(ngModel)]="commission.date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button
+        *ngIf="act === 'add'"
+        mat-raised-button
+        color="primary"
+        class="mat-elevation-z6 w-100 mt-3"
+        type="submit"
+        style="color: black;"
+        (click)="addCommission()"
+      >
+        {{ "Ajouter" | translate }}
+      </button>
+      <button
+      *ngIf="act === 'edit'"
+      mat-raised-button
+      color="primary"
+      class="mat-elevation-z6 w-100 mt-3"
+      type="submit"
+      style="color: black;"
+      (click)="updateCommission()"
+    >
+      {{ "Modifier" | translate }}
+    </button>
+    </div>
+</div>
+</div>

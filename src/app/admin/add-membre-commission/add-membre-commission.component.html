@@ -26,46 +26,11 @@
       <mat-form-field class="w-100">
         <input
           matInput
-          placeholder="{{ 'Prenom' | translate }}"
-          formControlName="username"
-        />
-        <mat-error *ngIf="form.controls.username.errors?.required">{{
-          "Prenom est obligatoire" | translate
-        }}</mat-error>
-      </mat-form-field>
-      <mat-form-field class="w-100">
-        <input
-          matInput
           placeholder="{{ 'Email' | translate }}"
           formControlName="email"
         />
         <mat-error *ngIf="form.controls.email.errors?.required">{{
           "Email est obligatoire" | translate
-        }}</mat-error>
-      </mat-form-field>
-      <!--      <mat-form-field class="w-100">
-          <input matInput placeholder="{{'Num Dossier'|translate}}" formControlName="num">
-              <mat-error *ngIf="form.controls.cin.errors?.required">{{'Num Dossier  est obligatoire'| translate}}</mat-error>
-              </mat-form-field>
-
-            <mat-form-field class="w-100">
-
-               <input matInput placeholder="{{'Email'|translate}}" formControlName="email">
-               <mat-error *ngIf="form.controls.email.errors?.required">{{'Email est obligatoire'| translate}}</mat-error>
-               <mat-error *ngIf="form.controls.email.hasError('invalidEmail')">{{'Addresse mail invalide'| translate}}</mat-error>
-           </mat-form-field>-->
-      <mat-form-field class="w-100" *ngIf="act === 'add'">
-        <input
-          type="password"
-          matInput
-          placeholder="{{ 'Mot de passe' | translate }}"
-          formControlName="password"
-        />
-        <mat-error *ngIf="form.controls.password.errors?.required">{{
-          "Mot de passe est obligatoire" | translate
-        }}</mat-error>
-        <mat-error *ngIf="form.controls.password.hasError('minlength')">{{
-          "Mot de passe court, minimum 5 lettres" | translate
         }}</mat-error>
       </mat-form-field>
 
@@ -82,6 +47,15 @@
         />
       </mat-form-field>
 
+      <mat-form-field class="w-100">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="type" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let type of types" [value]="type">
+            {{ type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
       <button
         *ngIf="act === 'add'"
         mat-raised-button
@@ -89,9 +63,9 @@
         class="mat-elevation-z6 w-100 mt-3"
         type="submit"
         style="color: black;"
-        (click)="register()"
+        (click)="add()"
       >
-        {{ "Inscription" | translate }}
+        {{ "Ajouter" | translate }}
       </button>
       <button
         *ngIf="act === 'update'"
@@ -100,7 +74,7 @@
         class="mat-elevation-z6 w-100 mt-3"
         type="submit"
         style="color: black;"
-        (click)="updateUser()"
+        (click)="update()"
       >
         Modifier
       </button>
