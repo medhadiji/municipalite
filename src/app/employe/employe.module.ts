@@ -19,7 +19,7 @@ children: [
     component: DossierComponent
   },
   {
-    path : 'dashboard',component : DashboardComponent
+    path : '',component : DashboardComponent
   },
   {
     path : '/login', component : LoginComponent

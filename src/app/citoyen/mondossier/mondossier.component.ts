@@ -2,11 +2,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-citoyen-layout',
-  templateUrl: './citoyen-layout.component.html',
-  styleUrls: ['./citoyen-layout.component.css']
+  selector: 'app-mondossier',
+  templateUrl: './mondossier.component.html',
+  styleUrls: ['./mondossier.component.css']
 })
-export class CitoyenLayoutComponent implements OnInit {
+export class MondossierComponent implements OnInit {
 
   @Output() switchDir = new EventEmitter<void>();
   @Input() color:string;
@@ -38,4 +38,5 @@ export class CitoyenLayoutComponent implements OnInit {
   onClickswitchDir() {
     this.switchDir.emit();
   }
+
 }

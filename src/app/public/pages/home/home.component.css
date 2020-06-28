@@ -3,3 +3,11 @@
   background-image: url('/assets/img/m.jpg');
   background-size: cover;
 }
+
+.example-card {
+  margin-top: 4%;
+  margin-left: 14%;
+  max-width: 1000px;
+}
+
+

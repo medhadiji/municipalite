@@ -54,5 +54,17 @@
   "Demandes":"الطلبات",
   "Utilisateurs":"المستخدمون",
  "Profile": "الملف الشخصي",
- "Réinitialiser":"إعادة تعيين"
+ "Réinitialiser":"إعادة تعيين",
+ "Mot de Passe oublié ?":"نسيت رقمك السري ؟",
+ "Une demande sur papier libre, signée par le pétitionnaire ou son représentant. (2 exemplaires)":"مطلب على ورق عادي ممضى من قبل طالب الرخصة أو من ينوبه.(2 نظائر)",
+ "Un certificat de propriété ou un jugement en matière pétitoire ou un autre document attribuant la propriété de la parcelle, sur laquelle il est projeté de construire (2 exemplaires)":"شهادة ملكية أو حكم استحقاقي أو وثيقة أخرى تثبت أن قطعة الأرض المزمع إقامة البناء عليها ملك له. (2 نظائر)",
+ "Un projet de construction (5 exemplaires).":"مشروع بناء في خمسة نظائر . (5 نظائر)",
+ "Une fiche technique délivrée par l administration, signée par l architecte, le maître d ouvrage (2 correspondances)":"(بطاقة إرشادات فنية تسلم من قبل الإدارة ممضاة من طرف المهندس المعماري مصمم المشروع.(2 نظائر",
+ "Un récépissé de la déclaration de l impôt sur le revenu des personnes physiques ou de l impôt sur les sociétés (2 exemplaires)":"(وصل إيداع التصريح بالضريبة على دخل الأشخاص الطبيعيين أو الضريبة على الشركات . (2 نظائر",
+ "Un reçu de paiement des taxes dues sur l immeuble objet de la demande du permis de bâtir (2 exemplaires).":"(وصل خلاص المعاليم الموظفة على العقار موضوع مطلب رخصة البناء .(2 نظائر",
+ "Note de présentation (2 exemplaires)":"(مذكرة تقديمية (2 نظائر",
+ "Copie de la carte d’identité nationale (2 exemplaires)":"(نسخة من بطاقة التعريف الوطنية (2 نظائر",
+ "Pièces nécessaires à la constitution d un dossier d une autorisation de bâtir :":"الوثائق المكونة لملف رخصة بناء ",
+ "Toute personne souhaitant construire, ou procéder à des travaux de restauration d une construction déjà existante ou y apporter des modifications, doit obtenir un permis de bâtir.":"كل مواطن يرغب في إقامة بناء أو القيام بترميم بناء قديم , أو إجراء إصلاحات عليه مطالب باستخراج رخصة بناء",
+ "Mon Dossier":"ملفي"
  }

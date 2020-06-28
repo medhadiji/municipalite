@@ -1,14 +1,11 @@
 <p style="margin-left: 5%;"> {{today | date : 'medium'}}</p>
+
 <mat-vertical-stepper [linear]="isLinear" #stepper>
 
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>{{'Dossier'|translate}}</ng-template>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="{{'Date de depot'|translate}}">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker><br>
-      </mat-form-field>
+
      <mat-form-field>
   <mat-label>{{'Nature du dossier'|translate}}</mat-label>
   <mat-select>
@@ -29,7 +26,7 @@
     </form>
     <div>
       <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>
-         &nbsp;  <button mat-raised-button  matStepperNext>{{'Suivant'|translate}}</button>
+         &nbsp;  <button mat-raised-button  matStepperNext >{{'Suivant'|translate}}</button>
 
     </div>
 
@@ -42,7 +39,7 @@
 
 
    <mat-form-field class="example-full-width">
-    <input matInput placeholder="{{'Num Terrain'|translate}}" formControlName="secondCtrl" required>
+    <input matInput placeholder="{{'Num Terrain'|translate}}" formControlName="secondCtrl" required >
   </mat-form-field><br><br>
 
     </form>
@@ -56,16 +53,9 @@
     <form [formGroup]="thirdFormGroup">
     <ng-template matStepLabel>{{'Propriétaire'|translate}}</ng-template>
       <mat-form-field class="example-full-width">
-    <input matInput placeholder="{{'Nom du propriétaire'|translate}}" formControlName="thirdCtrl" required>
+    <input matInput placeholder="{{'Nom du propriétaire'|translate}}" formControlName="thirdCtrl" required >
   </mat-form-field><br>
-  <mat-form-field>
-  <mat-label>{{'Choisir un propriétaire existant'|translate}}</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let prop of proprietaire" [value]=" prop.value">
-      {{prop.viewValue|translate}}
-    </mat-option>
-  </mat-select>
-</mat-form-field><br>
+ <br>
  <div>
       <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>
          &nbsp;  <button mat-raised-button  matStepperNext>{{'Suivant'|translate}}</button>
@@ -90,7 +80,7 @@
 
        <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>&nbsp;
         <button mat-raised-button  (click)="stepper.reset()">{{'Réinitialiser'|translate}}</button>
-       &nbsp;  <button mat-raised-button  >{{'Enregistrer'|translate}}</button>
+       &nbsp;  <button mat-raised-button  (click)="addDossier()">{{'Enregistrer'|translate}}</button>
       </div>
     </form>
 </mat-step>

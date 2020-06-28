@@ -50,7 +50,18 @@
   "Demandes":"Demandes",
   "Utilisateurs":"Utilisateurs",
   "Profile":"Profile",
-  "Réinitialiser":"Réinitialiser"
-
+  "Réinitialiser":"Réinitialiser",
+  "Mot de Passe oublié ?":"Mot de Passe oublié ?",
+"Une demande sur papier libre, signée par le pétitionnaire ou son représentant. (2 exemplaires)":"Une demande sur papier libre, signée par le pétitionnaire ou son représentant. (2 exemplaires)",
+"Un certificat de propriété ou un jugement en matière pétitoire ou un autre document attribuant la propriété de la parcelle, sur laquelle il est projeté de construire (2 exemplaires)":"Un certificat de propriété ou un jugement en matière pétitoire ou un autre document attribuant la propriété de la parcelle, sur laquelle il est projeté de construire (2 exemplaires)",
+"Un projet de construction (5 exemplaires).":"Un projet de construction (5 exemplaires).",
+"Une fiche technique délivrée par l'administration, signée par l'architecte, le maître d'ouvrage (2 correspondances)":"Une fiche technique délivrée par l'administration, signée par l'architecte, le maître d'ouvrage (2 correspondances)",
+"Un récépissé de la déclaration de l'impôt sur le revenu des personnes physiques ou de l'impôt sur les sociétés (2 exemplaires)":"Un récépissé de la déclaration de l'impôt sur le revenu des personnes physiques ou de l'impôt sur les sociétés (2 exemplaires)",
+"Un reçu de paiement des taxes dues sur l'immeuble objet de la demande du permis de bâtir (2 exemplaires).":"Un reçu de paiement des taxes dues sur l'immeuble objet de la demande du permis de bâtir (2 exemplaires).",
+"Note de présentation (2 exemplaires)":"Note de présentation (2 exemplaires)",
+"Copie de la carte d’identité nationale (2 exemplaires)":"Copie de la carte d’identité nationale (2 exemplaires)",
+"Pièces nécessaires à la constitution d un dossier d une autorisation de bâtir :":"Pièces nécessaires à la constitution d un dossier d une autorisation de bâtir :",
+"Toute personne souhaitant construire, ou procéder à des travaux de restauration d une construction déjà existante ou y apporter des modifications, doit obtenir un permis de bâtir.":"Toute personne souhaitant construire, ou procéder à des travaux de restauration d une construction déjà existante ou y apporter des modifications, doit obtenir un permis de bâtir.",
+"Mon Dossier":"Mon Dossier"
 
 }

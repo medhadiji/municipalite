@@ -1,1 +1,76 @@
-<p>citoyen-layout works!</p>
+
+<ng-container *ngIf="showSideNav">
+
+  <mat-toolbar  class="example-header mat-elevation-z1">
+
+      <button class="navbar-toggle-button" mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+      </button>
+      <div class="toolbar-separator"></div>
+      <div class="ml-1">{{'Municipalite ' |translate}}</div>
+
+
+  <div fxFlex fxLayoutAlign="end center" > </div>
+  <ul fxLayout fxLayoutGap="10px" class="navigation-items"style=" list-style: none;"  >
+    <li >
+      <a style="cursor: pointer" (click)="switchLang('fr')" >FR</a>
+    </li>
+    <li >
+      <a style="cursor: pointer" (click)="switchLang('ar')">AR</a>
+    </li>
+  </ul>
+  <div style="float: right;">
+
+        <button mat-button (click)="logout()"  class="">
+          <mat-icon>exit_to_app</mat-icon>
+          <span fxHide.xs style="margin-left: 10px;">{{'Deconnexion'| translate}}</span>
+      </button>
+
+      </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav mat-elevation-z6">
+          <mat-nav-list>
+
+
+            <a  routerLink="/">
+              <mat-list-item style="  color: white!important;" >
+              <mat-icon class="admin-icon">home</mat-icon>
+              <span>{{'Accueil'|translate}}</span>
+            </mat-list-item>
+            </a>
+
+                <a  routerLink="/citoyen/mondossier">
+                  <mat-list-item style="  color: white!important;" >
+                  <mat-icon class="admin-icon">drafts</mat-icon>
+                  <span>{{'Mon Dossier'|translate}}</span>
+                </mat-list-item>
+                </a>
+
+              <mat-divider></mat-divider>
+
+
+
+
+          </mat-nav-list>
+
+      </mat-sidenav>
+
+      <mat-sidenav-content>
+          <main  id="admin">
+              <router-outlet></router-outlet>
+          </main>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+  </ng-container>
+  <ng-container *ngIf="!showSideNav">
+    <main  id="admin">
+
+      <router-outlet></router-outlet>
+  </main>
+
+  </ng-container>
+
+
+

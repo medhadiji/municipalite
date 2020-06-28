@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { EmployeService } from '../service/employe.service';
 
 export interface PeriodicElement {
   name: string;
@@ -25,9 +26,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class DashboardComponent implements OnInit {
+  allDossier:any = [] ;
 
 
-  constructor() { }
+  constructor(private service :EmployeService) { }
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -35,9 +37,17 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
+    this.getAllDossier();
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  getAllDossier(){
+    this.service.getAllDossier().subscribe((result)=>{
+      console.log(result);
+      this.allDossier=result;
+    })
   }
 }
 

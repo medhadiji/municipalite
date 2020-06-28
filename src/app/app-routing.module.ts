@@ -20,6 +20,16 @@ const routes: Routes = [
     }
   },
   {
+    path: 'citoyen',
+    loadChildren: () => import('./citoyen/citoyen.module').then(m => m.CitoyenModule),
+    //canActivate: [AuthGuard],
+    data: {
+      roles: [
+        'user'
+      ]
+    }
+  },
+  {
     path: 'employe',
     loadChildren: () => import('./employe/employe.module').then(m => m.EmployeModule),
    // canActivate: [AuthGuard],

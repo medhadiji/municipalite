@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DossierComponent } from '../dossier/dossier.component';
+import { dossier } from 'src/app/shared/models/dossier';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class EmployeService {
   endpoint : string ="http://localhost:8080/";
 
+  dossier : dossier;
+
+
+
   constructor(private http : HttpClient) { }
+
+
 
   getAllNature(){
     let api = `${this.endpoint}natures/getAll`;
@@ -24,10 +34,20 @@ export class EmployeService {
     return this.http.get(api);
   }
 
-  getAllEmploye(){
-    let api = `${this.endpoint}/getAll`;
+
+
+  getAllDossier(){
+    let api = `${this.endpoint}dossiers/getAll`;
     return this.http.get(api);
   }
+
+addDossier(dossier : dossier){
+ let api = `${this.endpoint}dossiers/save`;
+ return this.http.post(api,dossier);
+
+}
+
+
 
 
 }

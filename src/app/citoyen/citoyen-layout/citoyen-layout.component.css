@@ -1,0 +1,68 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+
+  background-size: cover;
+}
+.example-container {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+ background: rgba(0, 0, 0, 0.87);
+
+
+}
+.user{
+  position: absolute;
+  right: 30px;
+}
+.example-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  background: whitesmoke;
+}
+.ml-1{
+    margin-left: 1em;
+}
+.navbar-toggle-button {
+  min-width: 56px;
+  height: 56px;
+}
+.example-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.toolbar-separator {
+  background: rgba(0, 0, 0, 0.12);
+}
+.toolbar-separator {
+  height: 64px;
+  width: 1px;
+}
+.admin-icon{
+margin-right: 10px;
+}
+@media screen and (max-width :599px){
+  .example-container {
+
+      top: 57px;
+
+    }
+}
+

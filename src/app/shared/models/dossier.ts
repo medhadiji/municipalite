@@ -1,5 +1,4 @@
 export class dossier{
-
  id:String;
   id_nature:String;
   id_type_construction:String;

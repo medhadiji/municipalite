@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { EmployeService } from '../service/employe.service';
+import { dossier } from 'src/app/shared/models/dossier';
+
 
 
 
@@ -8,6 +10,9 @@ export interface prop{
   value: string;
   viewValue: string;
 }
+
+
+
 @Component({
   selector: 'app-dossier',
   templateUrl: './dossier.component.html',
@@ -19,6 +24,10 @@ export class DossierComponent implements OnInit {
   allTerrain:any=[];
   allConstruction :any =[];
 
+  d : dossier = new dossier();
+
+
+
   today : number = Date.now();
   fFormGroup : FormGroup;
   proprietaire : prop []=[
@@ -26,6 +35,8 @@ export class DossierComponent implements OnInit {
   ];
 
   constructor(private _formBuilder: FormBuilder, private service :EmployeService) {}
+
+  form :FormGroup;
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -38,6 +49,7 @@ export class DossierComponent implements OnInit {
   ngOnInit() {
     this.getAllNature();
     this.getAllConstruction();
+
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -53,6 +65,8 @@ export class DossierComponent implements OnInit {
     });
 
   }
+
+
 getAllNature(){
   this.service.getAllNature().subscribe((result)=>{
     console.log(result)
@@ -74,5 +88,17 @@ getAllConstruction(){
 
   })
 }
+
+
+
+addDossier(){
+
+  this.service.addDossier(this.secondFormGroup.value).subscribe((result)=>{
+  console.log(result);
+  })
+}
+
+
+
 
 }

@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
 let user = this.form.value;
 user.username = this.form.value['email'];
 user.validate=false;
-user.userRole="user";
+user.userRole="pm";
 user.idDossier=2;
 console.log(user)
   this.authService.signup(user).subscribe(val=>{
