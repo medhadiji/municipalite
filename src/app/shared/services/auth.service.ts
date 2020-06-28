@@ -38,4 +38,8 @@ export class AuthService {
     let api = `${this.endpoint}auth/deleteUser`;
     return this.http.get(api + "/" + id);
   }
+
+  isLoggedIn(){
+    return localStorage.getItem('token') ? true : false;
+  }
 }
