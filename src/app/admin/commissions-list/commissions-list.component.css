@@ -1,0 +1,11 @@
+.commissions-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.add-btn {
+    position: fixed;
+    right: 50px;
+    bottom: 10px;
+    outline: none !important;
+  }

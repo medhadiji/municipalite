@@ -1,0 +1,39 @@
+<div class="cont" fxLayout="row" fxLayoutAlign="center center" class="h-100">
+  <div fxFlex="90" fxFlex.gt-sm="100" fxFlex.sm="100" class="mat-elevation-z6">
+    <div class="content-header">
+      <div class="logo">
+        <img style="width: 50%;" src="" />
+      </div>
+      <h1>{{ "Membres" | translate }}</h1>
+    </div>
+    <div class="p-3">
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let item of allMembers">
+          <div
+            style="width: 100%;"
+            fxLayout
+            fxLayoutAlign="space-between center"
+          >
+            <span> {{ item.name }} ({{ item.type }})</span>
+            <span
+              ><button
+                mat-raised-button
+                (click)="invite(item)"
+                *ngIf="!existInCommission(item.id)"
+              >
+                inviter
+              </button>
+              <button
+                mat-raised-button
+                (click)="resetInvit(item)"
+                *ngIf="existInCommission(item.id)"
+              >
+                annuler l'invitation
+              </button></span
+            >
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

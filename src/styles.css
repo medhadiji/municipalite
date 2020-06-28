@@ -2,3 +2,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-dialog-container{
+    padding: 0 !important;
+    min-width: 35vw;
+    outline: none !important;
+}
+
+button{
+    outline: none !important;
+}
+
+.table td, .table th{
+    padding: .75rem !important
+}

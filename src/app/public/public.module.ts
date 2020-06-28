@@ -9,6 +9,7 @@ import { AuthGuard } from '../shared/services/auth.guard';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmployeLayoutComponent } from '../employe/employe-layout/employe-layout.component';
+import { GuestGuard } from '../shared/services/guest-gurad';
 
 const routes: Routes = [
   {
@@ -17,11 +18,13 @@ const routes: Routes = [
     children: [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [GuestGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [GuestGuard]
   },
   {
     path: '',
