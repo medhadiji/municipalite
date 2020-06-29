@@ -25,17 +25,17 @@ const routes: Routes = [
     //canActivate: [AuthGuard],
     data: {
       roles: [
-        'user'
+        'ROLE_USER'
       ]
     }
   },
   {
     path: 'employe',
     loadChildren: () => import('./employe/employe.module').then(m => m.EmployeModule),
-   // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     data: {
       roles: [
-        'employe'
+        'ROLE_PM'
       ]
     }
   },

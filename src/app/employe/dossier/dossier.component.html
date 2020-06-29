@@ -1,92 +1,129 @@
-<p style="margin-left: 5%;"> {{today | date : 'medium'}}</p>
+<p style="margin-left: 5%;">{{ today | date: "medium" }}</p>
 
 <mat-vertical-stepper [linear]="isLinear" #stepper>
-
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>{{'Dossier'|translate}}</ng-template>
-
-     <mat-form-field>
-  <mat-label>{{'Nature du dossier'|translate}}</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let natureDossier of allNature" [value]="natureDossier.id">
-      {{natureDossier.libelle}}
-    </mat-option>
-  </mat-select>
-</mat-form-field><br>
- <mat-form-field>
-  <mat-label>{{'Type de construction'|translate}}</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let typeConstruction of allConstruction" [value]="typeConstruction.id">
-      {{typeConstruction.type}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-    </form>
+  <mat-step>
     <div>
-      <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>
-         &nbsp;  <button mat-raised-button  matStepperNext >{{'Suivant'|translate}}</button>
+      <ng-template matStepLabel>{{ "Dossier" | translate }}</ng-template>
 
+      <mat-form-field>
+        <mat-label>{{ "Nature du dossier" | translate }}</mat-label>
+        <mat-select [(ngModel)]="nature">
+          <mat-option
+            *ngFor="let natureDossier of allNature"
+            [value]="natureDossier.id"
+          >
+            {{ natureDossier.libelle }}
+          </mat-option>
+        </mat-select> </mat-form-field
+      ><br />
+      <mat-form-field>
+        <mat-label>{{ "Type de construction" | translate }}</mat-label>
+        <mat-select [(ngModel)]="type_construction">
+          <mat-option
+            *ngFor="let typeConstruction of allConstruction"
+            [value]="typeConstruction.id"
+          >
+            {{ typeConstruction.type }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
-
+    <div>
+      <button mat-raised-button matStepperPrevious>
+        {{ "Retour" | translate }}
+      </button>
+      &nbsp;
+      <button mat-raised-button matStepperNext>
+        {{ "Suivant" | translate }}
+      </button>
+    </div>
   </mat-step>
 
-
- <mat-step [stepControl]="secondFormGroup">
+  <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-    <ng-template matStepLabel>{{'Terrain'|translate}}</ng-template>
+      <ng-template matStepLabel>{{ "Terrain" | translate }}</ng-template>
 
-
-   <mat-form-field class="example-full-width">
-    <input matInput placeholder="{{'Num Terrain'|translate}}" formControlName="secondCtrl" required >
-  </mat-form-field><br><br>
-
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="{{ 'Num Terrain' | translate }}"
+          formControlName="secondCtrl"
+          required
+        /> </mat-form-field
+      ><br /><br />
     </form>
     <div>
-      <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>
-         &nbsp;  <button mat-raised-button  matStepperNext>{{'Suivant'|translate}}</button>
-
+      <button mat-raised-button matStepperPrevious>
+        {{ "Retour" | translate }}
+      </button>
+      &nbsp;
+      <button mat-raised-button matStepperNext>
+        {{ "Suivant" | translate }}
+      </button>
     </div>
   </mat-step>
-   <mat-step [stepControl]="thirdFormGroup">
+  <mat-step [stepControl]="thirdFormGroup">
     <form [formGroup]="thirdFormGroup">
-    <ng-template matStepLabel>{{'Propriétaire'|translate}}</ng-template>
+      <ng-template matStepLabel>{{ "Propriétaire" | translate }}</ng-template>
       <mat-form-field class="example-full-width">
-    <input matInput placeholder="{{'Nom du propriétaire'|translate}}" formControlName="thirdCtrl" required >
-  </mat-form-field><br>
- <br>
- <div>
-      <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>
-         &nbsp;  <button mat-raised-button  matStepperNext>{{'Suivant'|translate}}</button>
-
-    </div>
-     </form>
+        <input
+          matInput
+          placeholder="{{ 'Nom du propriétaire' | translate }}"
+          formControlName="thirdCtrl"
+          required
+        /> </mat-form-field
+      ><br />
+      <br />
+      <div>
+        <button mat-raised-button matStepperPrevious>
+          {{ "Retour" | translate }}
+        </button>
+        &nbsp;
+        <button mat-raised-button matStepperNext>
+          {{ "Suivant" | translate }}
+        </button>
+      </div>
+    </form>
   </mat-step>
 
-<mat-step [stepControl]="fourthFormGroup">
+  <mat-step [stepControl]="fourthFormGroup">
     <form [formGroup]="fourthFormGroup">
       <div class="form">
-      <ng-template matStepLabel>{{'Pieces du dossier'|translate}}</ng-template>
+        <ng-template matStepLabel>{{
+          "Pieces du dossier" | translate
+        }}</ng-template>
 
-       <mat-checkbox formControlName="fourthCtrl" required>{{'Plan'|translate}}</mat-checkbox><br>
-       <mat-checkbox>{{'Une demande sur papier libre'|translate}}</mat-checkbox>
-       <br>
-       <mat-checkbox>{{'Une fiche de renseignements techniques'|translate}}</mat-checkbox><br>
-       <mat-checkbox>{{'Un projet de construction établi en six (6) exemplaires ou plus'|translate}}</mat-checkbox>
-
+        <mat-checkbox formControlName="fourthCtrl" required (change)="check($event, 'plan')">{{
+          "Plan" | translate
+        }}</mat-checkbox
+        ><br />
+        <mat-checkbox (change)="check($event, 'Une demande sur papier libre')">{{
+          "Une demande sur papier libre" | translate
+        }}</mat-checkbox>
+        <br />
+        <mat-checkbox (change)="check($event, 'Une fiche de renseignements techniques')">{{
+          "Une fiche de renseignements techniques" | translate
+        }}</mat-checkbox
+        ><br />
+        <mat-checkbox (change)="check($event, 'Un projet de construction établi en six (6) exemplaires ou plus')">{{
+          "Un projet de construction établi en six (6) exemplaires ou plus"
+            | translate
+        }}</mat-checkbox>
       </div>
-       <div><br><br>
+      <div>
+        <br /><br />
 
-       <button mat-raised-button  matStepperPrevious>{{'Retour'|translate}}</button>&nbsp;
-        <button mat-raised-button  (click)="stepper.reset()">{{'Réinitialiser'|translate}}</button>
-       &nbsp;  <button mat-raised-button  (click)="addDossier()">{{'Enregistrer'|translate}}</button>
+        <button mat-raised-button matStepperPrevious>
+          {{ "Retour" | translate }}</button
+        >&nbsp;
+        <button mat-raised-button (click)="stepper.reset()">
+          {{ "Réinitialiser" | translate }}
+        </button>
+        &nbsp;
+        <button mat-raised-button (click)="addDossier()">
+          {{ "Enregistrer" | translate }}
+        </button>
       </div>
     </form>
-</mat-step>
-
+  </mat-step>
 </mat-vertical-stepper>
-
-
-
-

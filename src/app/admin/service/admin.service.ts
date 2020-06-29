@@ -60,6 +60,31 @@ export class AdminService {
 
   mailMember(id, comId, subject) {
     let api = `${this.endpoint}membrecommission/invite`;
-    return this.http.get(api + "/" + id + '/' + comId + '/' + subject);
+    return this.http.get(api + "/" + id + "/" + comId + "/" + subject);
+  }
+
+  getAllDossiers() {
+    let api = `${this.endpoint}dossiers/getAllDossiersWithDetails`;
+    return this.http.get(api);
+  }
+
+  getOneDossierDetails(id) {
+    let api = `${this.endpoint}dossiers/getOneDossierDetails`;
+    return this.http.get(api + '/' + id);
+  }
+
+  affectDossierToCommission(idDossier, idCommission) {
+    let api = `${this.endpoint}dossiers/affectToCommission`;
+    return this.http.get(api + "/" + idDossier + "/" + idCommission);
+  }
+
+  dossierDecision(id, dossier) {
+    let api = `${this.endpoint}dossiers/updateById`;
+    return this.http.post(api + "/" + id, dossier);
+  }
+
+  addDecison(decision) {
+    let api = `${this.endpoint}decision/addDecision`;
+    return this.http.post(api, decision);
   }
 }

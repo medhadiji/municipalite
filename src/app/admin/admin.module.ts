@@ -10,6 +10,7 @@ import { AddCommissionComponent } from "./add-commission/add-commission.componen
 import { InviterMembresComponent } from "./inviter-membres/inviter-membres.component";
 import { MembreCommissionListComponent } from "./membre-commission-list/membre-commission-list.component";
 import { AddMembreCommissionComponent } from "./add-membre-commission/add-membre-commission.component";
+import { GestionDossiersComponent } from './gestion-dossiers/gestion-dossiers.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
         path: "membre-commissions",
         component: MembreCommissionListComponent,
       },
+      {
+        path: "dossiers",
+        component: GestionDossiersComponent,
+      },
     ],
   },
 ];
@@ -47,6 +52,7 @@ const routes: Routes = [
     InviterMembresComponent,
     MembreCommissionListComponent,
     AddMembreCommissionComponent,
+    GestionDossiersComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [],
