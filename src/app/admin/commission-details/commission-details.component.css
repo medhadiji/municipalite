@@ -1,0 +1,18 @@
+.commission-details-container {
+  height: calc(100vh - 70px);
+  width: 100%;
+  padding: 20px;
+  background: #fff !important;
+}
+
+.card {
+  width: 80%;
+  background: #fff !important;
+  padding: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  min-width: 160px;
+}

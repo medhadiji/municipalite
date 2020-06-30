@@ -1,0 +1,48 @@
+<div class="commission-details-container" fxLayout="column">
+  <div
+    class="card"
+    fxLayout="column"
+    fxLayoutGap="20px"
+    fxFlex
+    id="content"
+    #content
+  >
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span></span>
+      <span fxLayout
+        ><span class="title">Commission le: </span>
+        {{ commission?.date | date }}</span
+      >
+    </div>
+
+    <div fxLayout>
+      <span fxLayout
+        ><span class="title">Membres: </span>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <span *ngIf="commissionMembers.length === 0" style="color: grey;">
+            pas de données disponibles</span
+          >
+          <span *ngFor="let el of commissionMembers"
+            >-{{ el?.name }} ({{ el?.type }})</span
+          >
+        </div>
+      </span>
+    </div>
+
+    <div fxLayout>
+      <span fxLayout
+        ><span class="title">Dossiers: </span>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <span *ngIf="commissionDossiers.length === 0" style="color: grey;">
+            pas de données disponibles</span
+          >
+          <span *ngFor="let el of commissionDossiers"
+            >-Numéro du dossier: {{ el?.id }} / Proprietere:
+            {{ el?.nom_proprietaire }} / Decision : {{ el?.decision }}
+            <span *ngIf="!el.id_decision" style="color: grey;">pas encore</span>
+          </span>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>

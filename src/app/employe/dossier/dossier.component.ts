@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { EmployeService } from "../service/employe.service";
@@ -29,7 +30,8 @@ export class DossierComponent implements OnInit {
   pieces: any = [];
   constructor(
     private _formBuilder: FormBuilder,
-    private service: EmployeService
+    private service: EmployeService,
+    public router: Router
   ) {}
 
   form: FormGroup;
@@ -86,20 +88,17 @@ export class DossierComponent implements OnInit {
     dossier.id_terrain = null;
     dossier.nom_proprietaire = this.thirdFormGroup.value["thirdCtrl"];
     dossier.pieces = JSON.stringify(this.pieces);
-    console.log(dossier);
     let terrain: any = {
-      numero_terrain: this.thirdFormGroup.value["thirdCtrl"],
+      numero_terrain: this.secondFormGroup.value["secondCtrl"],
     };
     this.service.addTerrain(terrain).subscribe((result) => {
       let rs: any;
       rs = result;
       dossier.id_terrain = rs.id;
       dossier.date = new Date().getTime();
-      this.service
-        .addDossier(dossier)
-        .subscribe((result) => {
-          console.log(result);
-        });
+      this.service.addDossier(dossier).subscribe((result) => {
+        this.router.navigate(['employe']);
+      });
     });
   }
 

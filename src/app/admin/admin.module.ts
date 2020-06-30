@@ -10,7 +10,10 @@ import { AddCommissionComponent } from "./add-commission/add-commission.componen
 import { InviterMembresComponent } from "./inviter-membres/inviter-membres.component";
 import { MembreCommissionListComponent } from "./membre-commission-list/membre-commission-list.component";
 import { AddMembreCommissionComponent } from "./add-membre-commission/add-membre-commission.component";
-import { GestionDossiersComponent } from './gestion-dossiers/gestion-dossiers.component';
+import { GestionDossiersComponent } from "./gestion-dossiers/gestion-dossiers.component";
+import { DossierDetailsComponent } from "../shared/dossier-details/dossier-details.component";
+import { CommissionDetailsComponent } from './commission-details/commission-details.component';
+import { ProfileComponent } from '../employe/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,17 @@ const routes: Routes = [
         path: "dossiers",
         component: GestionDossiersComponent,
       },
+      {
+        path: "dossierDetails",
+        component: DossierDetailsComponent,
+      },
+      {
+        path: "commissionDetails",
+        component: CommissionDetailsComponent,
+      },
+      {
+        path : 'profile', component : ProfileComponent
+      },
     ],
   },
 ];
@@ -53,6 +67,7 @@ const routes: Routes = [
     MembreCommissionListComponent,
     AddMembreCommissionComponent,
     GestionDossiersComponent,
+    CommissionDetailsComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [],

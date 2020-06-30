@@ -43,6 +43,10 @@
               <mat-icon>edit</mat-icon>
               <span>Modifier</span>
             </button>
+            <button mat-menu-item (click)="viewCommissionr(element.id)">
+              <mat-icon>visibility</mat-icon>
+              <span>Vue</span>
+            </button>
             <button mat-menu-item (click)="deleteCommission(element.id)">
               <mat-icon>delete</mat-icon>
               <span>Delete</span>

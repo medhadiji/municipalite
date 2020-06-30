@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from '../shared/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DossierDetailsComponent } from '../shared/dossier-details/dossier-details.component';
 
 const routes: Routes = [
   { path: '', component: EmployeLayoutComponent ,
@@ -26,6 +27,9 @@ children: [
   },
   {
     path : 'profile', component : ProfileComponent
+  },
+  {
+    path : 'dossierDetails', component : DossierDetailsComponent
   }
 ]
 
@@ -35,7 +39,7 @@ children: [
 
 
 @NgModule({
-  declarations: [EmployeLayoutComponent,  DossierComponent, DashboardComponent, ProfileComponent],
+  declarations: [EmployeLayoutComponent,  DossierComponent, DashboardComponent],
   imports: [
     CommonModule,
     SharedModule,

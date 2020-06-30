@@ -22,8 +22,14 @@ export class LoginComponent implements OnInit {
     public router: Router
   ) {
     this.form = this.fb.group({
-      'username': [null, Validators.compose([Validators.required, Validators.email])],
-      'password': [null, Validators.compose([Validators.required, Validators.minLength(6)])]
+      username: [
+        null,
+        Validators.compose([Validators.required, Validators.email]),
+      ],
+      password: [
+        null,
+        Validators.compose([Validators.required, Validators.minLength(6)]),
+      ],
     });
   }
 
@@ -36,6 +42,7 @@ export class LoginComponent implements OnInit {
       let res: any = result;
       localStorage.setItem("token", res.accessToken);
       localStorage.setItem("role", res.authorities[0].authority);
+      localStorage.setItem("uid", res.id);
       if (res.authorities[0].authority === "ROLE_USER") {
       } else if (res.authorities[0].authority === "ROLE_PM") {
         this.router.navigateByUrl("/employe");

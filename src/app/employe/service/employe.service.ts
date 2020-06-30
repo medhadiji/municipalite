@@ -42,4 +42,10 @@ export class EmployeService {
     let api = `${this.endpoint}terrain/saveTerrain`;
     return this.http.post(api, terrain);
   }
+
+  getAllDossiersWithDetails() {
+    let api = `${this.endpoint}dossiers/getAllDossiersWithDetails`;
+    return this.http.get(api);
+  }
+  
 }

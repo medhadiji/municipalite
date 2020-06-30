@@ -25,7 +25,9 @@
       <!-- Name Column -->
       <ng-container matColumnDef="commission">
         <th mat-header-cell *matHeaderCellDef>Commission</th>
-        <td mat-cell *matCellDef="let element">{{ element?.date_commission | date }}</td>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.date_commission | date }}
+        </td>
       </ng-container>
 
       <!-- Name Column -->
@@ -34,17 +36,19 @@
         <td mat-cell *matCellDef="let element">{{ element?.decision }}</td>
       </ng-container>
 
-         <!-- Name Column -->
-         <ng-container matColumnDef="proprietere">
-          <th mat-header-cell *matHeaderCellDef>Proprietere</th>
-          <td mat-cell *matCellDef="let element">{{ element?.nom_proprietaire }}</td>
-        </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="proprietere">
+        <th mat-header-cell *matHeaderCellDef>Proprietere</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.nom_proprietaire }}
+        </td>
+      </ng-container>
 
-           <!-- Name Column -->
-           <ng-container matColumnDef="nature">
-            <th mat-header-cell *matHeaderCellDef>Nature</th>
-            <td mat-cell *matCellDef="let element">{{ element?.nature }}</td>
-          </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="nature">
+        <th mat-header-cell *matHeaderCellDef>Nature</th>
+        <td mat-cell *matCellDef="let element">{{ element?.nature }}</td>
+      </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="action">
@@ -67,10 +71,10 @@
               <mat-icon>edit</mat-icon>
               <span>Decision</span>
             </button>
-            <!-- <button mat-menu-item (click)="deleteCommission(element.id)">
-                <mat-icon>delete</mat-icon>
-                <span>Delete</span>
-              </button> -->
+            <button mat-menu-item (click)="viewDossier(element.id)">
+              <mat-icon>visibility</mat-icon>
+              <span>Vue</span>
+            </button>
           </mat-menu>
         </td>
       </ng-container>

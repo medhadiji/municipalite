@@ -43,6 +43,11 @@ export class AdminService {
     return this.http.get(api);
   }
 
+  getCommissionById(id) {
+    let api = `${this.endpoint}commission/getCommissionById`;
+    return this.http.get(api + '/' + id);
+  }
+
   updateCommission(id, commission) {
     let api = `${this.endpoint}commission/updateCommission`;
     return this.http.post(api + "/" + id, commission);
@@ -55,6 +60,11 @@ export class AdminService {
 
   getCommissionMembres(id) {
     let api = `${this.endpoint}commission/getCommissionMembersById`;
+    return this.http.get(api + "/" + id);
+  }
+
+  getCommissionDossiers(id) {
+    let api = `${this.endpoint}commission/getCommissionDossiers`;
     return this.http.get(api + "/" + id);
   }
 
@@ -86,5 +96,10 @@ export class AdminService {
   addDecison(decision) {
     let api = `${this.endpoint}decision/addDecision`;
     return this.http.post(api, decision);
+  }
+
+  getUserById(id){
+    let api = `${this.endpoint}auth/getUsersById`;
+    return this.http.get(api + '/' + id);
   }
 }

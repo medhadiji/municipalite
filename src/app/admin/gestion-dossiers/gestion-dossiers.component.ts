@@ -1,3 +1,4 @@
+import { NavigationExtras, Router } from "@angular/router";
 import Swal from "sweetalert2";
 import { Component, OnInit } from "@angular/core";
 import { AdminService } from "../service/admin.service";
@@ -25,7 +26,7 @@ export class GestionDossiersComponent implements OnInit {
   selectedCommission: any;
   options: any = [];
   decisons: any = ["Accépté", "Refusé", "Ajourné"];
-  constructor(public service: AdminService) {}
+  constructor(public service: AdminService, public router: Router) {}
 
   ngOnInit() {
     this.getAllDossiers();
@@ -125,5 +126,14 @@ export class GestionDossiersComponent implements OnInit {
         }
       },
     }).then((data) => {});
+  }
+
+  viewDossier(id) {
+    const navData: NavigationExtras = {
+      queryParams: {
+        id: id,
+      },
+    };
+    this.router.navigate(["admin/dossierDetails"], navData);
   }
 }

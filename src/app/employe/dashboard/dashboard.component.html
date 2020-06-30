@@ -1,69 +1,109 @@
 <div class="container">
-<div fxLayout="row" fxLayoutAlign="space-between center" style="margin-top: 50px;">
-  <mat-card fxFlex="300px" class="example-card">
-
-    <mat-card-content>
-        <div fxFlex="50"><i  class="fas fa-users fa-5x"></i></div>
-        <div fxFlex="50" style="text-align: center;" style="font-weight: bold;"><p>{{'Utilisateurs'|translate}}</p>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    style="margin-top: 50px;"
+  >
+    <mat-card fxFlex="300px" class="example-card">
+      <mat-card-content>
+        <div fxFlex="50"><i class="fas fa-users fa-5x"></i></div>
+        <div fxFlex="50" style="text-align: center;" style="font-weight: bold;">
+          <p>{{ "Utilisateurs" | translate }}</p>
           <p>4</p>
         </div>
-    </mat-card-content>
+      </mat-card-content>
+    </mat-card>
 
-  </mat-card>
-
-  <mat-card fxFlex="300px" class="example-card">
-
-    <mat-card-content>
-
-      <div fxFlex="50"><i  class="fas fa-users fa-5x" style="font-weight: bold;"></i></div>
-        <div fxFlex="50" style="text-align: center;"style="font-weight: bold;"><p>Utilisateurs</p>
+    <mat-card fxFlex="300px" class="example-card">
+      <mat-card-content>
+        <div fxFlex="50">
+          <i class="fas fa-users fa-5x" style="font-weight: bold;"></i>
+        </div>
+        <div fxFlex="50" style="text-align: center;" style="font-weight: bold;">
+          <p>Utilisateurs</p>
           <p>4</p>
         </div>
-    </mat-card-content>
-
-  </mat-card>
-  <mat-card fxFlex="300px" class="example-card">
-
-    <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="300px" class="example-card">
+      <mat-card-content>
         <div fxFlex="50"><i class="fas fa-folder-open fa-5x"></i></div>
-        <div fxFlex="50" style="text-align: center;" style="font-weight: bold;"><p>{{'Demandes'|translate}}</p>
+        <div fxFlex="50" style="text-align: center;" style="font-weight: bold;">
+          <p>{{ "Demandes" | translate }}</p>
           <p>4</p>
         </div>
-    </mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applyFilter($event.target.value)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+  <table
+    mat-table
+    style="width: 100%; margin: auto;"
+    [dataSource]="dataSource"
+    matSort
+    class="mat-elevation-z8"
+  >
+    <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
 
-  </mat-card>
+    <!-- Position Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="commission">
+      <th mat-header-cell *matHeaderCellDef>Commission</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element?.date_commission | date }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="decision">
+      <th mat-header-cell *matHeaderCellDef>Decision</th>
+      <td mat-cell *matCellDef="let element">{{ element?.decision }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="proprietere">
+      <th mat-header-cell *matHeaderCellDef>Proprietere</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element?.nom_proprietaire }}
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nature">
+      <th mat-header-cell *matHeaderCellDef>Nature</th>
+      <td mat-cell *matCellDef="let element">{{ element?.nature }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button (click)="viewDossier(element.id)">
+          <mat-icon>visibility</mat-icon>
+          <span>Vue</span>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </div>
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
-<table mat-table style="width: 100%;margin: auto;"[dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-weight: bold;">{{'No.'|translate}}  </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-weight: bold;">{{'Demande'|translate}}</th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-weight: bold;"> {{'Nom du propriétaire'|translate}}</th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-weight: bold;"> {{'Decision'|translate}} </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-</div>
-

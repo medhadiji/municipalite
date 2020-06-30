@@ -1,0 +1,96 @@
+<div class="dossier-details-container" fxLayout="column">
+  <div
+    class="card"
+    fxLayout="column"
+    fxLayoutGap="20px"
+    fxFlex
+    id="content"
+    #content
+  >
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span></span>
+      <span fxLayout
+        ><span class="title">Numero dossier: </span>
+        {{ dossierDetails?.id }}</span
+      >
+    </div>
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span></span>
+      <span fxLayout
+        ><span class="title">Date de creation: </span>
+        {{ dossierDetails?.date | date }}</span
+      >
+    </div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Proprietére: </span>
+        {{ dossierDetails?.nom_proprietaire }}</span
+      >
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Piéces: </span>
+        <div>
+          <div *ngFor="let el of piece" fxLayout="column" fxLayoutGap="10px">
+            <span>-{{ el }}</span>
+          </div>
+        </div>
+      </span>
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Numéro terrain: </span>
+        {{ dossierDetails?.numero_terrain }}</span
+      >
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Nature: </span> {{ dossierDetails?.nature }}</span
+      >
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Type construction: </span>
+        {{ dossierDetails?.type_construction }}</span
+      >
+    </div>
+    <hr />
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Commission: </span>
+        <span *ngIf="dossierDetails?.id_commission">{{
+          dossierDetails?.date_commission | date
+        }}</span>
+        <span *ngIf="!dossierDetails?.id_commission">Pas encore</span>
+      </span>
+    </div>
+
+    <div fxLayout fxLayoutAlign="space-between center">
+      <span fxLayout
+        ><span class="title">Decision: </span>
+        <span *ngIf="dossierDetails?.id_decision">{{
+          dossierDetails?.decision
+        }}</span>
+        <span *ngIf="!dossierDetails?.id_decision">Pas encore</span>
+      </span>
+    </div>
+  </div>
+  <div fxLayout fxLayoutAlign="space-between center" fxFlex="60px">
+    <span></span>
+    <button
+      (click)="capturePDF()"
+      mat-fab
+      color="warn"
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>print</mat-icon>
+    </button>
+  </div>
+</div>

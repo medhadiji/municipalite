@@ -1,3 +1,4 @@
+import { NavigationExtras, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { AdminService } from "../service/admin.service";
@@ -17,9 +18,16 @@ export class CommissionsListComponent implements OnInit {
   dataSource = this.ELEMENT_DATA;
   dialogRef: any;
   allCommissions: any = [];
-  constructor(public service: AdminService, public dialog: MatDialog) {}
+  constructor(
+    public service: AdminService,
+    public dialog: MatDialog,
+    public router: Router
+  ) {}
 
   ngOnInit() {
+    this.service.getUserById(localStorage.getItem('uid')).subscribe(result=>{
+      console.log(result)
+    })
     this.getAllCommissions();
   }
 
@@ -72,12 +80,17 @@ export class CommissionsListComponent implements OnInit {
         this.service.deleteCommission(id).subscribe((res) => {
           this.getAllCommissions();
         });
-        Swal.fire(
-          "Deleted!",
-          "",
-          "success"
-        );
+        Swal.fire("Deleted!", "", "success");
       }
     });
+  }
+
+  viewCommissionr(id) {
+    const navData: NavigationExtras = {
+      queryParams: {
+        id: id,
+      },
+    };
+    this.router.navigate(["admin/commissionDetails"], navData);
   }
 }
