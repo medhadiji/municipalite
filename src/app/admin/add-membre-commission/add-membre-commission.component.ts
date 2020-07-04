@@ -16,7 +16,7 @@ export class AddMembreCommissionComponent implements OnInit {
   public form: FormGroup;
   act: any = "add";
   selectedValue: any = "architecte";
-  types: any = ["architecte", "autre"];
+  types: any = ["architecte", "Président de la commune","autre"];
   constructor(
     public dialogRef: MatDialogRef<AddMembreCommissionComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,

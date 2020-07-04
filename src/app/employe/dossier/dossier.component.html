@@ -93,10 +93,11 @@
           "Pieces du dossier" | translate
         }}</ng-template>
 
-        <mat-checkbox formControlName="fourthCtrl" required (change)="check($event, 'plan')">{{
-          "Plan" | translate
+        <mat-checkbox formControlName="fourthCtrl" required (change)="check($event, 'Copie de la carte d’identité')">{{
+          "Copie de la carte d’identité" | translate
         }}</mat-checkbox
         ><br />
+
         <mat-checkbox (change)="check($event, 'Une demande sur papier libre')">{{
           "Une demande sur papier libre" | translate
         }}</mat-checkbox>
@@ -105,8 +106,23 @@
           "Une fiche de renseignements techniques" | translate
         }}</mat-checkbox
         ><br />
-        <mat-checkbox (change)="check($event, 'Un projet de construction établi en six (6) exemplaires ou plus')">{{
-          "Un projet de construction établi en six (6) exemplaires ou plus"
+        <mat-checkbox (change)="check($event, 'Un récépissé de la déclaration de l impôt ')">{{
+          "Un récépissé de la déclaration de l impôt " | translate
+        }}</mat-checkbox
+        ><br />
+        <mat-checkbox (change)="check($event, 'Plan de construction')">{{
+          "Plan de construction"
+            | translate
+        }}</mat-checkbox><br>
+        <mat-checkbox (change)="check($event, 'Un certificat de propriété')">{{
+          "Un certificat de propriété"
+            | translate
+        }}</mat-checkbox>
+        <br>
+
+
+        <mat-checkbox (change)="check($event, 'Un reçu de paiement des taxes')">{{
+          "Un reçu de paiement des taxes"
             | translate
         }}</mat-checkbox>
       </div>

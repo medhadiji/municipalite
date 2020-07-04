@@ -5,9 +5,12 @@
 }
 
 .example-card {
-  margin-top: 4%;
-  margin-left: 14%;
-  max-width: 1000px;
+  margin-top: 4.5%;
+  margin-left: 15.5%;
+  max-width: 900px;
+  opacity: 0.9;
+  padding: 2%;
+  height: 600px;
 }
 
 

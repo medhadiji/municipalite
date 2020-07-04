@@ -39,9 +39,9 @@ export class RegisterComponent implements OnInit {
 
 let user = this.form.value;
 user.username = this.form.value['email'];
-user.validate=false;
-user.userRole="pm";
-user.idDossier=2;
+user.validate=true;
+user.userRole="user";
+
 console.log(user)
   this.authService.signup(user).subscribe(val=>{
     console.log(val);

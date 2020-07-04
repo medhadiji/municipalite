@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-citoyen-layout',
@@ -10,7 +11,8 @@ export class CitoyenLayoutComponent implements OnInit {
 
   @Output() switchDir = new EventEmitter<void>();
   @Input() color:string;
-  constructor(private translate: TranslateService){
+
+  constructor(private translate: TranslateService,public router: Router){
     const lng = localStorage.getItem('language');
     if (!lng || lng === null) {
       localStorage.setItem('language', 'fr');
@@ -21,7 +23,8 @@ export class CitoyenLayoutComponent implements OnInit {
   showSideNav=true;
 
   logout() {
-
+    localStorage.clear();
+    this.router.navigateByUrl("/login");
   }
 
   ngOnInit() {

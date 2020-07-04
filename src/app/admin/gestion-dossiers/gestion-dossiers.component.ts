@@ -42,8 +42,8 @@ export class GestionDossiersComponent implements OnInit {
 
   addToCommission(element) {
     Swal.fire({
-      title: "Etes vous sur!",
-      text: "affecter ce dossier à une commission",
+      title: "Êtes-vous sûr?",
+      text: "Affecter ce dossier à une commission",
 
       input: "select",
       inputOptions: this.options,
@@ -90,7 +90,7 @@ export class GestionDossiersComponent implements OnInit {
 
   dossierDecision(element) {
     Swal.fire({
-      title: "Etes vous sur!",
+      title: "Êtes-vous sûr?",
       text: "Prendre une décision",
 
       input: "select",

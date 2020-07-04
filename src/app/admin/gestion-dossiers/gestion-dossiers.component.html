@@ -1,6 +1,7 @@
 <div class="commissions-container" fxLayout="column" fxLayoutGap="5vh">
   <span></span>
   <div class="table">
+    <h1 style="font-family:times new roman , times, serif;"> Liste des Dossiers : </h1><br>
     <table
       mat-table
       [dataSource]="dataSource"
@@ -65,7 +66,7 @@
           <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="addToCommission(element)">
               <mat-icon>edit</mat-icon>
-              <span>Ajouter a une commission</span>
+              <span>Affecter a une commission</span>
             </button>
             <button mat-menu-item (click)="dossierDecision(element)">
               <mat-icon>edit</mat-icon>

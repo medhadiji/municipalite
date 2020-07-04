@@ -1,4 +1,4 @@
-<div class="dossier-details-container" fxLayout="column">
+<div class="dossier-details-container" fxLayout="column" style="font-family:times new roman , times, serif;">
   <div
     class="card"
     fxLayout="column"
@@ -10,14 +10,14 @@
     <div fxLayout fxLayoutAlign="space-between center">
       <span></span>
       <span fxLayout
-        ><span class="title">Numero dossier: </span>
+        ><span class="title" style="font-weight: Bold;">Numero dossier: </span>
         {{ dossierDetails?.id }}</span
       >
     </div>
     <div fxLayout fxLayoutAlign="space-between center">
       <span></span>
       <span fxLayout
-        ><span class="title">Date de creation: </span>
+        ><span class="title" style="font-weight: Bold;">Date de creation: </span>
         {{ dossierDetails?.date | date }}</span
       >
     </div>
@@ -26,14 +26,14 @@
     <span></span>
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Proprietére: </span>
+        ><span class="title" style="font-weight: Bold;">Proprietaire: </span>
         {{ dossierDetails?.nom_proprietaire }}</span
       >
     </div>
 
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Piéces: </span>
+        ><span class="title" style="font-weight: Bold;">Piéces: </span>
         <div>
           <div *ngFor="let el of piece" fxLayout="column" fxLayoutGap="10px">
             <span>-{{ el }}</span>
@@ -44,27 +44,27 @@
 
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Numéro terrain: </span>
+        ><span class="title" style="font-weight: Bold;">Numéro terrain: </span>
         {{ dossierDetails?.numero_terrain }}</span
       >
     </div>
 
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Nature: </span> {{ dossierDetails?.nature }}</span
+        ><span class="title" style="font-weight: Bold;">Nature: </span> {{ dossierDetails?.nature }}</span
       >
     </div>
 
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Type construction: </span>
+        ><span class="title" style="font-weight: Bold;">Type construction: </span>
         {{ dossierDetails?.type_construction }}</span
       >
     </div>
     <hr />
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Commission: </span>
+        ><span class="title" style="font-weight: Bold;">Commission: </span>
         <span *ngIf="dossierDetails?.id_commission">{{
           dossierDetails?.date_commission | date
         }}</span>
@@ -74,7 +74,7 @@
 
     <div fxLayout fxLayoutAlign="space-between center">
       <span fxLayout
-        ><span class="title">Decision: </span>
+        ><span class="title" style="font-weight: Bold;">Decision: </span>
         <span *ngIf="dossierDetails?.id_decision">{{
           dossierDetails?.decision
         }}</span>

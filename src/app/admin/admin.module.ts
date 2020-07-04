@@ -15,34 +15,35 @@ import { DossierDetailsComponent } from "../shared/dossier-details/dossier-detai
 import { CommissionDetailsComponent } from './commission-details/commission-details.component';
 import { ProfileComponent } from '../employe/profile/profile.component';
 
+
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: AdminLayoutComponent,
     children: [
       {
-        path: "admindashboard",
+        path: '',
         component: AdmindashboardComponent,
       },
 
       {
-        path: "registeremploye",
+        path: 'registeremploye',
         component: RegisteremployeComponent,
       },
       {
-        path: "commissions",
+        path: 'commissions',
         component: CommissionsListComponent,
       },
       {
-        path: "membre-commissions",
+        path: 'membre-commissions',
         component: MembreCommissionListComponent,
       },
       {
-        path: "dossiers",
+        path: 'dossiers',
         component: GestionDossiersComponent,
       },
       {
-        path: "dossierDetails",
+        path: 'dossierDetails',
         component: DossierDetailsComponent,
       },
       {

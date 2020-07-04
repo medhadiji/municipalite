@@ -7,6 +7,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { AuthService } from "src/app/shared/services/auth.service";
 import Swal from "sweetalert2";
 
+
 export interface PeriodicElement {
   name: string;
   position: number;

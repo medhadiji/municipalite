@@ -69,7 +69,7 @@ export class CommissionsListComponent implements OnInit {
 
   deleteCommission(id) {
     Swal.fire({
-      title: "etes vous sur de le supprimer?",
+      title: "Êtes-vous sûr de vouloir supprimer?",
       text: "",
       icon: "warning",
       showCancelButton: true,
@@ -80,7 +80,7 @@ export class CommissionsListComponent implements OnInit {
         this.service.deleteCommission(id).subscribe((res) => {
           this.getAllCommissions();
         });
-        Swal.fire("Deleted!", "", "success");
+        Swal.fire("Supprimer!", "", "success");
       }
     });
   }
