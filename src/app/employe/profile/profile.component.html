@@ -9,14 +9,32 @@
   </mat-card>
   <div fxLayoutAlign="space-between center">
     <mat-list class="mat-list">
-      <mat-list-item><span style="width: 200px;">Contact:</span> {{ profile?.phone }}</mat-list-item>
+      <mat-list-item
+        ><span style="width: 200px;">Contact:</span>
+        {{ profile?.phone }}</mat-list-item
+      >
       <mat-divider></mat-divider>
-      <mat-list-item><span style="width: 200px;">Email:</span> {{ profile?.email }}</mat-list-item>
+      <mat-list-item
+        ><span style="width: 200px;">Email:</span>
+        {{ profile?.email }}</mat-list-item
+      >
       <mat-divider></mat-divider>
-      <mat-list-item><span style="width: 200px;">Adresse:</span> {{ profile?.address }}</mat-list-item>
+      <mat-list-item
+        ><span style="width: 200px;">Adresse:</span>
+        {{ profile?.address }}</mat-list-item
+      >
       <mat-divider></mat-divider>
-      <mat-list-item><span style="width: 200px;">Mot de passe:</span> ******</mat-list-item>
+      <mat-list-item>
+        <div style="width: 100%;" fxLayout fxLayoutAlign="start center">
+          <span style="width: 200px;">Mot de passe:</span>
+          <div fxLayout fxLayoutAlign="center center">
+            <span>*******</span>
+            <button class="navbar-toggle-button" mat-icon-button (click)="openChange()">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-list-item>
     </mat-list>
-
   </div>
 </div>

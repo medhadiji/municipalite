@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="h-100">
   <form
     [formGroup]="form"
-    (ngSubmit)="loginUser()"
+    (ngSubmit)="reset()"
     fxFlex="90"
     fxFlex.gt-sm="30"
     fxFlex.sm="60"
@@ -11,23 +11,24 @@
       <div class="logo">
         <img style="width: 100%;" src="" />
       </div>
-      <h1>{{ "Connexion" | translate }}</h1>
+      <h1>{{ "Renitialiser mot de pass" | translate }}</h1>
     </div>
     <div class="p-3">
       <mat-form-field class="w-100">
         <mat-icon matPrefix class="mat-icon-sm mb-2 mr-2 secondary-text-color"
-          >mail</mat-icon
+          >lock</mat-icon
         >
         <input
           matInput
-          placeholder="{{ 'Email' | translate }}"
-          formControlName="username"
+          placeholder="{{ 'Mot de passe' | translate }}"
+          formControlName="password"
+          type="password"
         />
-        <mat-error *ngIf="form.controls.username.errors?.required">{{
-          "Email est obligatoire" | translate
+        <mat-error *ngIf="form.controls.password.errors?.required">{{
+          "Mot de passe est obligatoire" | translate
         }}</mat-error>
-        <mat-error *ngIf="form.controls.username.hasError('invalidEmail')">{{
-          "Addresse mail invalide" | translate
+        <mat-error *ngIf="form.controls.password.hasError('minlength')">{{
+          "Mot de passe court, minimum 5 lettres" | translate
         }}</mat-error>
       </mat-form-field>
       <mat-form-field class="w-100">
@@ -37,14 +38,11 @@
         <input
           type="password"
           matInput
-          placeholder="{{ 'Mot de passe' | translate }}"
-          formControlName="password"
+          placeholder="{{ 'Retaper Mot de passe' | translate }}"
+          formControlName="password2"
         />
-        <mat-error *ngIf="form.controls.password.errors?.required">{{
+        <mat-error *ngIf="form.controls.password2.errors?.required">{{
           "Mot de passe est obligatoire" | translate
-        }}</mat-error>
-        <mat-error *ngIf="form.controls.password.hasError('minlength')">{{
-          "Mot de passe court, minimum 5 lettres" | translate
         }}</mat-error>
       </mat-form-field>
 
@@ -53,18 +51,14 @@
         style="color: black;"
         mat-raised-button
         color="primary"
-        [disabled]="form.invalid"
+        [disabled]="
+          form.invalid || form.value['password'] != form.value['password2']
+        "
         class="mat-elevation-z6 w-100 mt-3"
         type="submit"
       >
-        {{ "Connexion" | translate }}</button
+        {{ "Renitialiser" | translate }}</button
       ><br />
-      <br /><a
-        (click)="resetPwd()"
-        style="margin-left: 30%; cursor: pointer; text-decoration: underline;"
-        >{{ "Mot de Passe oublié ?" | translate }}</a
-      >
-      <mat-spinner *ngIf="isLoading"></mat-spinner>
     </div>
   </form>
 </div>

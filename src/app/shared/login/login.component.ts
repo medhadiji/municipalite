@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { AuthService } from "../services/auth.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: "app-login",
@@ -52,7 +53,25 @@ export class LoginComponent implements OnInit {
       }
       this.isLoading = false;
     });
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 3000);
   }
+
+  async resetPwd() {
+    const { value: email } = await Swal.fire({
+      title: "Reinitialiser votre mot de passe",
+      input: "email",
+      inputPlaceholder: "Entrer votre email",
+    });
+
+    if (email) {
+      this.authService.resetPasswordSend(email).subscribe((res) => {
+        Swal.fire(`Verifier l'adresse: ${email}`);
+      });
+    }
+  }
+
   ngOnDestroy() {
     if (this.loadingSubs) {
       this.loadingSubs.unsubscribe();

@@ -10,6 +10,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { RegisterComponent } from "./register/register.component";
 import { DossierDetailsComponent } from "./dossier-details/dossier-details.component";
 import { ProfileComponent } from '../employe/profile/profile.component';
+import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ProfileComponent } from '../employe/profile/profile.component';
     LoginComponent,
     RegisterComponent,
     DossierDetailsComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     CommonModule,

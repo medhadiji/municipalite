@@ -10,6 +10,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { EmployeLayoutComponent } from '../employe/employe-layout/employe-layout.component';
 import { GuestGuard } from '../shared/services/guest-gurad';
+import { ResetPwdComponent } from '../shared/reset-pwd/reset-pwd.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     canActivate: [GuestGuard]
   },
   {
+    path: 'resetPwd/:token/:email',
+    component: ResetPwdComponent,
+    canActivate: []
+  },
+  {
     path: '',
     component: HomeComponent
   },
@@ -38,7 +44,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [PublicLayoutComponent, LoginPageComponent, HomeComponent],
+  declarations: [PublicLayoutComponent, LoginPageComponent, HomeComponent,ResetPwdComponent],
   imports: [
     CommonModule,
     SharedModule,
